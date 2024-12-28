@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <style>        
+         section {
+            height: 100vh;
+            padding: 20px;
+            background-color: white;
+        } 
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <nav class="navbar">
+      <!--navigasi -->
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links">
+             <a href="home.html">home</a>
+             <a href="about.html">About</a>
+             <a href="contact.html">contact</a>
+        </ul>
+    </nav>
+           <h1>*About us</h1>
+           
+             <section class="animate-on-scroll">
+    <h2>Kenapa website ini dibuat?</h2>
+    <img src="Shiroko.jpg" alt="Deskripsi gambar" width="200">
+    <h3>Karena kegabutan admin</h3>
+</section>
+
+  <script>
+    // Detecting scroll event to trigger the animation
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('.animate-on-scroll');
+        sections.forEach(function(section) {
+            const position = section.getBoundingClientRect();
+            if (position.top < window.innerHeight && position.bottom >= 1) {
+                section.classList.add('visible');
+            }
+        });
+    });
+</script>
+      </body>
+      </html>
